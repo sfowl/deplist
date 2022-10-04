@@ -4,8 +4,8 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/RedHatProductSecurity/deplist"
-	"github.com/RedHatProductSecurity/deplist/internal/scan"
+	"github.com/sfowl/deplist"
+	"github.com/sfowl/deplist/internal/scan"
 	purl "github.com/mcoops/packageurl-go"
 	log "github.com/sirupsen/logrus"
 )

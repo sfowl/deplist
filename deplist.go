@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/RedHatProductSecurity/deplist/internal/scan"
-	"github.com/RedHatProductSecurity/deplist/internal/utils"
+	"github.com/sfowl/deplist/internal/scan"
+	"github.com/sfowl/deplist/internal/utils"
 
 	log "github.com/sirupsen/logrus"
 )
