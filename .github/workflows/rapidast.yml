@@ -1,0 +1,30 @@
+## This is an example workflow on how to run the rapidast script and upload a parsed results as artifacts ##
+
+name: rapidast-report
+
+on:
+  pull_request:
+  push:
+
+
+jobs:
+  rapidast:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/redhatproductsecurity/rapidast:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: run rapidast
+        run: |
+          rapidast.py --config rapidast-config.yaml
+          # Display ZAP scan results in GitHub UI
+          cat results/*/*/*/zap/zap-report.json >> $GITHUB_OUTPUT
+
+      - name: Upload rapidast parsed results
+        uses: actions/upload-artifact@v3
+        with:
+          path: 'results/*/*/*/*'
+        if: ${{ always() }}
