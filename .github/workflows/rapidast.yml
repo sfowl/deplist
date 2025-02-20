@@ -24,7 +24,7 @@ jobs:
           cat results/*/*/*/zap/zap-report.json >> $GITHUB_OUTPUT
 
       - name: Upload rapidast parsed results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: 'results/*/*/*/*'
         if: ${{ always() }}
