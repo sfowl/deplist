@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: quay.io/redhatproductsecurity/rapidast:latest
-      options: --user 1000
+      options: --user rapidast:1000:1000
 
     steps:
       - uses: actions/checkout@v4
