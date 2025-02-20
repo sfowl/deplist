@@ -12,14 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: quay.io/redhatproductsecurity/rapidast:latest
-      # options: --user rapidast:1000:1000
-      options: --user root
+      options: --user root # default rapidast user not compatible with github runners
 
     steps:
       - uses: actions/checkout@v4
 
       - name: run rapidast
         run: |
+          pwd
           rapidast.py --config rapidast-config.yaml
           # Display ZAP scan results in GitHub UI
           cat results/*/*/*/zap/zap-report.json >> $GITHUB_OUTPUT
