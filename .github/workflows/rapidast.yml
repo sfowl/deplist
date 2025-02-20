@@ -33,6 +33,7 @@ jobs:
           curl -v http://httpd
           rapidast.py --config rapidast-config.yml
           # Display ZAP scan results in GitHub UI
+          find results/
           cat results/*/*/*/zap/zap-report.json >> $GITHUB_OUTPUT
 
       - name: Upload rapidast parsed results
