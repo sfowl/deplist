@@ -16,7 +16,7 @@ jobs:
 
     # Target application to scan goes here. This contains a stub example for httpd.
     # A more realistic example would include target a custom container image built
-    # pushed to a public container registry in an earlier build step.
+    # and pushed to a public container registry in an earlier build step.
     #
     # In the rapidast config file, for this example "http://httpd" would be the target URL.
     #
@@ -30,7 +30,7 @@ jobs:
       - name: run rapidast
         run: |
           pwd
-          rapidast.py --config rapidast-config.yaml
+          rapidast.py --config rapidast-config.yml
           # Display ZAP scan results in GitHub UI
           cat results/*/*/*/zap/zap-report.json >> $GITHUB_OUTPUT
 
