@@ -32,11 +32,10 @@ jobs:
           pwd
           curl -v http://httpd
           rapidast.py --config rapidast-config.yml
-          # Display ZAP scan results in GitHub UI
-          cat results/*/*/zap/zap-report.json >> $GITHUB_OUTPUT
+          # Display ZAP scan results in logs
+          cat results/*/*/zap/zap-report.json
 
-      - name: Upload rapidast parsed results
+      - name: Upload rapidast results
         uses: actions/upload-artifact@v4
         with:
           path: 'results/*/*/*'
-        if: ${{ always() }}
